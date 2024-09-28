@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
+:root {
+    --body-bg: url('../public/img/default-bg.jpg');
+}
+
+body {
+    margin: 0;
+    background: var(--body-bg) center 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFFFFFDD;
+    background-color: #1a1a1a;
+    font-family: "Inter", sans-serif;
+}
+
+/* Estilo para el menú horizontal con fondo transparente */
+
+/* Logo */
+#logo {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: #4745457e; 
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icono del menú */
+#menu-icon {
+    font-size: 30px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+    transition: right 0.3s ease;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    /* Ocultar el menú horizontal y mostrar el icono */
+    .dropdown-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 250px;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        z-index: 999;
+    }
+
+    .dropdown-menu.show {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateX(0);
+    }
+
+    #menu-icon.show {
+        right: 265px; /* Se desplaza cuando el menú está visible */
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .dropdown-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .dropdown-menu li {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .dropdown-menu a {
+        color: black;
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+/* Overlay para cerrar el menú al hacer clic fuera */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+
+
+/* Cuerpo principal*/
+
+/* Carta */
+.details {
+    z-index: 1;
+    position: absolute;
+    top: 240px;
+    left: 60px;
+    background-color: #1a1a1a48;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.details .type-box {
+    height: 46px;
+    overflow: hidden;
+}
+
+.details .type-box .text {
+    padding-top: 16px;
+    font-size: 20px;
+}
+
+.details .type-box .text:before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 4px;
+    border-radius: 99px;
+    background-color: white;
+}
+
+.details .title-1,
+.details .title-2 {
+    font-weight: 600;
+    font-size: 72px;
+    font-family: "Oswald", sans-serif;
+}
+
+.details .title-box-1,
+.details .title-box-2 {
+    margin-top: 2px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.details > .desc {
+    margin-top: 16px;
+    width: 500px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .details {
+        top: 200px;
+        left: 40px;
+    }
+    .details .title-1,
+    .details .title-2 {
+        font-size: 60px;
+    }
+    .details > .desc {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        top: 150px;
+        left: 20px;
+    }
+    .details .title-1,
+    .details .title-2 {
+        font-size: 48px;
+    }
+    .details > .desc {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details {
+        top: 100px;
+        left: 10px;
+    }
+    .details .title-1,
+    .details .title-2 {
+        font-size: 36px;
+    }
+    .details > .desc {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Galeria */
+
+.container {
+    position: relative;
+    display: grid;
+    top: 20rem;
+    right: 8rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    width: 800px;
+    height: 500px;
+    transition: all 400ms;
+    margin-left: auto;
+    margin-right: 0;
+    font-family: "Figtree", sans-serif;
+}
+
+.container:hover .box {
+	filter: grayscale(100%) opacity(24%);
+}
+
+.box {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .box:hover {
+	filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+	transform: translateY(16px);
+}
+
+.box::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	padding: 10px 10px 10px 14px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
+}
+
+
+
+
+.footer {
+    background-color: #4745457e; /* Color de fondo del footer */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Posición del footer */
+    margin-bottom: 0.5rem;
+    left: 0;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/main.js" defer></script>
+    
+</head>
+
+<body>
+  <!-- Menú de navegación -->
+  
+  <i id="menu-icon" class="icon">≡</i>
+  <nav class="dropdown-menu">
+      <ul>
+          <img id="logo" src="img/sinon_hamburger_88730553_p0.png" alt="logo">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Galería</a></li>
+          <li><a href="#">Contacto</a></li>
+      </ul>
+  </nav>
+
+
+  <!-- Carta informativa -->
+    <div class="details" id="details-odd">
+      <div class="type-box">
+        <div class="text">Anime or game</div>
+      </div>
+      <div class="title-box-1"><div class="title-1">Personajes  </div></div>
+      <div class="title-box-2"><div class="title-2">favoritos</div></div>
+      <div class="desc">
+        Aqui ira su descripción de ellos o ellas...
+      </div>
+    </div>
+  
+
+  <!-- Galeria -->
+
+  <div class="container">
+    <div class="box box-1" style="--img: url('../public/img/gotoh_hitori-card.jpg');" data-text="Bocchi"></div>
+    <div class="box box-2" style="--img: url('../public/img/chiori-card.jpg');" data-text="Chiori"></div>
+    <div class="box box-3" style="--img: url('../public/img/nakano_yotsuba-card.jpg');" data-text="Yotsuba"></div>
+    <div class="box box-4" style="--img: url('../public/img/maple-card.jpg');" data-text="Maple"></div>
+    <div class="box box-5" style="--img: url('../public/img/fio_germi-card.jpg ');" data-text="Fio"></div>
+  </div>
+  
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p> Copyright © <span id="year"></span> FreshTutorials.</p>
+  </footer>
+</body>
+</html>
